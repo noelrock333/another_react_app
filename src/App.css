@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.home-page {
+  background: #61dafb;
+}
+
+.about-page {
+  background: lightsalmon;
+}
