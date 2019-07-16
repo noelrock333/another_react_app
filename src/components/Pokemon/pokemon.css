@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.pokemon h3 {
+  text-transform: capitalize;
+}
+
 .pokemon img {
   width: 200px;
 }
@@ -15,6 +19,7 @@
 }
 
 .pokemon .abilities li {
+  text-transform: capitalize;
   margin: 7px 0;
 }
 

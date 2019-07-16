@@ -10,10 +10,6 @@ class Pokemon extends React.Component {
     isRequesting: true
   }
 
-  capitalizeName = (name) =>{
-      return name.charAt(0).toUpperCase() + name.slice(1);
-  }
-
   componentDidMount() {
     const { match: { params: { name } }} = this.props;
     axios
@@ -40,12 +36,12 @@ class Pokemon extends React.Component {
     const { name, abilities, imageUrl } = this.state;
     return (
       <div className="pokemon">
-        <h3>Pokemon: {this.capitalizeName(name)}</h3>
+        <h3>Pokemon: {name}</h3>
         <img src={imageUrl} alt="{name}"/>
         <div className="abilities">
           <label htmlFor="">Abilities:</label>
           <ul>
-            {abilities.map(({ ability, slot }) => <li key={slot}>{this.capitalizeName(ability.name)}</li>)}
+            {abilities.map(({ ability, slot }) => <li key={slot}>{ability.name}</li>)}
           </ul>
         </div>
       </div>
