@@ -5,6 +5,7 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 import Users from './components/Users';
 import Pokemon from './components/Pokemon';
+import Pokemons from './components/Pokemons';
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route exact path='/about' component={About} />
       <Route exact path='/pokemon/:name' component={Pokemon} />
       <Route exact path='/users/:name/age/:age' component={Users} />
+      <Route exact path='/pokemons' component={Pokemons} />
       <Route component={NotFound}/>
     </Switch>
   )
