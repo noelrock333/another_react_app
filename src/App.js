@@ -11,7 +11,9 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Nav />
-        <AppRoutes />
+        <div className='main-container'>
+          <AppRoutes />
+        </div>
       </BrowserRouter>
     </Provider>
   );

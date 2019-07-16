@@ -10,9 +10,11 @@ class Users extends React.Component {
   render() {
     const { match: { params } } = this.props;
     return (
-      <div>
-        {params.name}
-        {params.age}
+      <div className="person-container">
+        <h2>User section</h2>
+        <span>
+          { `${params.name}: ${params.age} years` }
+        </span>
       </div>
     )
   }

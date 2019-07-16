@@ -1,0 +1,8 @@
+.pokemons a {
+  color: #000;
+  text-decoration: none;
+}
+
+.pokemons h4 {
+  text-transform: capitalize;
+}

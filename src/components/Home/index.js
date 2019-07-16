@@ -3,30 +3,33 @@ import React from 'react';
 class Home extends React.Component {
   state = {
     apellido: 'Soft',
-    edad: this.props.edad
+    edad: this.props.edad || 0
   }
 
-  miFunction = () => {
-    console.log(this.state.edad);
+  wrogUp = () => {
+    // console.log(this.state.edad);
     this.setState({
       edad: this.state.edad + 1
     });
   }
 
   item = () => {
-    return <span>Example</span>
+    return <span>This is an item example</span>
   }
 
   render() {
     return (
       <div className="home-page">
-        <h3>{this.state.apellido}</h3>
-        <h3>{this.state.edad}</h3> {/* dasdasdas */}
-        {this.props.children}
+        <h2>Wellcome, this is the home page!</h2>
         <div>
-          {this.item()}
+          <h3>{this.state.apellido}</h3>
+          <h3>{this.state.edad}</h3> {/* dasdasdas */}
+          {this.props.children}
+          <div>
+            {this.item()}
+          </div>
+          <button onClick={this.wrogUp}>Crecer de edad</button>
         </div>
-        <button onClick={this.miFunction}>Crecer de edad</button>
       </div>
     )
   }

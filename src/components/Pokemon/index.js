@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './pokemon.css'
 
 class Pokemon extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class Pokemon extends React.Component {
           isRequesting: false
         })
       })
-  }  
+  }
 
   modifyPokemon = () => {
     this.setState({
@@ -36,11 +37,13 @@ class Pokemon extends React.Component {
     return (
       <div className="pokemon">
         <h3>Pokemon: {name}</h3>
-        <img src={imageUrl} alt=""/>
-        <label htmlFor="">Abilities</label>
-        <ul>
-          {abilities.map(({ ability, slot }) => <li key={slot}>{ability.name}</li>)}
-        </ul>
+        <img src={imageUrl} alt="{name}"/>
+        <div className="abilities">
+          <label htmlFor="">Abilities:</label>
+          <ul>
+            {abilities.map(({ ability, slot }) => <li key={slot}>{ability.name}</li>)}
+          </ul>
+        </div>
       </div>
     )
   }
