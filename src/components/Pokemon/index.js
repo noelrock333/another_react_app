@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './pokemon.css'
 
 class Pokemon extends React.Component {
   state = {
@@ -7,6 +8,10 @@ class Pokemon extends React.Component {
     abilities: [],
     imageUrl: '',
     isRequesting: true
+  }
+
+  capitalizeName = (name) =>{
+      return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
   componentDidMount() {
@@ -23,7 +28,7 @@ class Pokemon extends React.Component {
           isRequesting: false
         })
       })
-  }  
+  }
 
   modifyPokemon = () => {
     this.setState({
@@ -35,12 +40,14 @@ class Pokemon extends React.Component {
     const { name, abilities, imageUrl } = this.state;
     return (
       <div className="pokemon">
-        <h3>Pokemon: {name}</h3>
-        <img src={imageUrl} alt=""/>
-        <label htmlFor="">Abilities</label>
-        <ul>
-          {abilities.map(({ ability, slot }) => <li key={slot}>{ability.name}</li>)}
-        </ul>
+        <h3>Pokemon: {this.capitalizeName(name)}</h3>
+        <img src={imageUrl} alt="{name}"/>
+        <div className="abilities">
+          <label htmlFor="">Abilities:</label>
+          <ul>
+            {abilities.map(({ ability, slot }) => <li key={slot}>{this.capitalizeName(ability.name)}</li>)}
+          </ul>
+        </div>
       </div>
     )
   }

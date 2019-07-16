@@ -1,0 +1,37 @@
+.pokemon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pokemon img {
+  width: 200px;
+}
+
+.pokemon .abilities label {
+  padding: 40px;
+  font-size: 1.25em;
+}
+
+.pokemon .abilities li {
+  margin: 7px 0;
+}
+
+.pokemon .abilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pokemon .abilities li:before {
+  background-image: url('./pokeball.png');
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  content: "";
+  display: block;
+  float: left;
+  height: 18px;
+  margin: 0 20px;
+  position: relative;
+  width: 16px;
+}
